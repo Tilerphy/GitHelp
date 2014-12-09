@@ -1,0 +1,2 @@
+ldapsearch -h 10.1.53.252 -W -x -D "CN=Administrator,CN=Users,DC=ccdev5252,DC=com" -b "DC=ccdev5252,DC=com" "sAMAccountName=administrator"
+
