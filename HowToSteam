@@ -12,7 +12,7 @@ cp -f /home/username/data.tar.gz ~/rpmbuild/SOURCES/steam.tar.gz
 
 cd~
 
-wget https://github.com/xvitaly/steamrpm/raw/master/steam/spec
+wget https://github.com/xvitaly/steamrpm/blob/master/steam.spec
 
 rpmbuild -bb --clean steam.spec
 
