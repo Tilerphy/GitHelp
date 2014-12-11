@@ -1,0 +1,24 @@
+Download Steam first
+
+Unzip Debian package
+
+copy data.tar.gz to /home/username/data.tar.gz
+
+sudo yum -y install rpm-build
+
+mkdir -p ~/rpmbuild/SOURCES
+
+cp -f /home/username/data.tar.gz ~/rpmbuild/SOURCES/steam.tar.gz
+
+cd~
+
+wget https://github.com/xvitaly/steamrpm/raw/master/steam/spec
+
+rpmbuild -bb --clean steam.spec
+
+sudo yum -y install ~/rpmbuild/RPMS/`uname -m`/steam*
+
+rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/o/openal-soft-1.16.0-2.el7.x86_64.rpm
+
+sudo yum -y install glibc.i686
+
