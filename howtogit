@@ -3,3 +3,4 @@ git clone git@github.com:sunzongbao2007/first-test-git.git #download all files h
 git remote add <name> git@github.com:sunzongbao2007/first-test-git.git #append a remote connection
 git remote remove <name> #remove connection
 git push -u <name> <branchname> # push all files to a branch in remote resp 
+git push git@github.com:Tilerphy/first-test-git.git
