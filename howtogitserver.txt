@@ -1,0 +1,29 @@
+1. Install OpenSSH
+sudo apt-get install openssh-server
+
+2. Create Git user in Server
+sudo adduser git
+
+passwd adduser
+
+3. Create SSH-Key in client
+
+ssh-keygen -t rsa
+
+4. Copy SSH to Git Server
+scp /home/<user>/.ssh/id_rsa.pub gitserverip:/home/git
+
+5. Create authorized_keys
+nano /home/git/.ssh/authorized_keys
+
+6. Append the id_rsa.pub Content into /home/git/.ssh/authorized_keys
+ssh-rsa <key-content>
+
+7. Install Git
+sudo apt-get install git-core
+
+8. Init repository
+git --bare init /home/git/<name>.git
+
+9. Clone in Client
+git clone git@gitserverip:/home/git/<name>.git
