@@ -1,0 +1,9 @@
+openssl genrsa -out ca-key.pem -des 1024
+
+openssl req -new -key ca-key.pem -out ca-csr.pem
+
+openssl x509 -req -in ca-csr.pem -signkey ca-key.pem -out ca-cert.pem
+
+
+
+#free cert: https://startssl.com/
