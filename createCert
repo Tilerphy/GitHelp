@@ -4,6 +4,6 @@ openssl req -new -key ca-key.pem -out ca-csr.pem
 
 openssl x509 -req -in ca-csr.pem -signkey ca-key.pem -out ca-cert.pem
 
-
+openssl pkcs12 -export -out server.pfx -inkey ca-key.pem  -in ca-cert.pem
 
 #free cert: https://startssl.com/
