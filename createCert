@@ -7,3 +7,8 @@ openssl x509 -req -in ca-csr.pem -signkey ca-key.pem -out ca-cert.pem
 openssl pkcs12 -export -out server.pfx -inkey ca-key.pem  -in ca-cert.pem
 
 #free cert: https://startssl.com/
+
+#pfx to pem and key
+openssl pkcs12 -in myssl.pfx -nodes -out server.pem
+openssl rsa -in server.pem -out server.key
+openssl x509 -in server.pem -out server.crt
