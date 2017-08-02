@@ -38,3 +38,17 @@ mknod /dev/ppp c 108 0  (VPS)
 
 service pptpd restart
 
+
+/////////disconnect the second connection
+# disconnect new PPTP connection if user already connected
+sleep 2
+PID=$(cat /var/run/$PPP_IFACE.pid)
+if [ $PID ]; then
+    PROCCESS="$(last -w | grep ppp | grep still | grep $PPP_IFACE)"
+    USERNAME=$(echo $PROCCESS | cut -d' ' -f1)
+    NUMLOGINS="$(last -w | grep ppp | grep still | grep -c $USERNAME' ')"
+    if [ $NUMLOGINS -gt 1 ]; then
+        kill $PID
+    fi
+fi
+
