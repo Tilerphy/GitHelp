@@ -28,6 +28,9 @@ username pptpd password *
 
 /etc/rc.local //////
 
+/etc/ppp/ip-up //////////
+#/sbin/ifconfig $PPP_IFACE mtu 1500
+
 iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE
 
 mknod /dev/ppp c 108 0  (VPS)
