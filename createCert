@@ -12,3 +12,7 @@ openssl pkcs12 -export -out server.pfx -inkey ca-key.pem  -in ca-cert.pem
 openssl pkcs12 -in myssl.pfx -nodes -out server.pem
 openssl rsa -in server.pem -out server.key
 openssl x509 -in server.pem -out server.crt
+
+
+# combine the key and crt
+openssl pkcs12 -export -out server.pfx -inkey server.key -in server.crt
