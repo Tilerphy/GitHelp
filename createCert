@@ -1,6 +1,6 @@
 openssl genrsa -out ca-key.pem -des 2048 -SHA512
 
-openssl req -new -key ca-key.pem -out ca-csr.pem
+openssl req -new -key ca-key.pem -out ca-csr.pem -days 3650
 
 openssl x509 -req -in ca-csr.pem -signkey ca-key.pem -out ca-cert.pem 
 
