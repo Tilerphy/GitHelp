@@ -8,6 +8,8 @@ openssl pkcs12 -export -out server.pfx -inkey ca-key.pem  -in ca-cert.pem
 
 openssl x509 -req -days 365 -in selfsign.csr -signkey selfsign.key -out selfsign.crt
 
+openssl rsa -in myserver.key -out server.key.insecure
+
 #free cert: https://startssl.com/
 
 #pfx to pem and key
