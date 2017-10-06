@@ -6,6 +6,8 @@ openssl x509 -req -in ca-csr.pem -signkey ca-key.pem -out ca-cert.pem
 
 openssl pkcs12 -export -out server.pfx -inkey ca-key.pem  -in ca-cert.pem
 
+openssl x509 -req -days 365 -in selfsign.csr -signkey selfsign.key -out selfsign.crt
+
 #free cert: https://startssl.com/
 
 #pfx to pem and key
