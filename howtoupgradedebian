@@ -1,0 +1,4 @@
+
+sudo aptitude update && sudo aptitude upgrade
+sed s/jessie/stretch/ /etc/apt/sources.list | sudo tee /etc/apt/sources.list
+sudo aptitude update && sudo aptitude dist-upgrade
