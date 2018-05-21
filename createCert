@@ -20,3 +20,10 @@ openssl x509 -in server.pem -out server.crt
 
 # combine the key and crt
 openssl pkcs12 -export -out server.pfx -inkey server.key -in server.crt
+
+#v3
+openssl genrsa -out ca-key.pem  2048 -SHA512
+openssl req -new -key ca-key.pem -out ca-csr.pem
+
+x509 -req -in ca-csr.pem -signkey ca-key.pem -out ca-cert.pem -extfile /etc/ssl/openssl.cnf -extensions v3_req -days 3650
+openssl pkcs12 -export -out server.pfx -inkey ca-key.pem -in ca-cert.pem
